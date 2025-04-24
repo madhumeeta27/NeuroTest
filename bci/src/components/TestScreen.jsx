@@ -23,8 +23,14 @@ function TestScreen({ endTest, setResults }) {
       questionNumber: question.id,
       category: question.category,
       timestamp: now,
+      prompt: question.prompt,
     }]);
-    if (currentIndex < 5) {
+
+    
+   
+
+    if (currentIndex < selectedQuestions.length - 1) {
+     
       setCurrentIndex(currentIndex + 1);
     } else {
       setResults(resultsList);
