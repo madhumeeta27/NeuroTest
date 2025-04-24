@@ -1,20 +1,18 @@
-import { useState } from 'react'
-
-import Hello from './components/Hello'
+import React, { useState } from 'react';
+import StartScreen from './components/StartScreen';
+import TestScreen from './components/TestScreen';
+import ResultsScreen from './components/ResultsScreen';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [screen, setScreen] = useState('start');
+  const [results, setResults] = useState([]);
 
   return (
-    <>
-      <div>
-        welcomeeeeee
-        <Hello/>
-
-        
+    <div className="p-4 text-center">
+      {screen === 'start' && <StartScreen startTest={() => setScreen('test')} />}
+      {screen === 'test' && <TestScreen endTest={setScreen} setResults={setResults} />}
+      {screen === 'results' && <ResultsScreen results={results} />}
     </div>
-    </>
-  )
+  );
 }
-
-export default App
+export default App;
