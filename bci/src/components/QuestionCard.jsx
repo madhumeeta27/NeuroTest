@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 
 function QuestionCard({ question, onSubmit }) {
-  const [seconds, setSeconds] = useState(30);
+  const [seconds, setSeconds] = useState(10);
   const [enabled, setEnabled] = useState(false);
   const [answer, setAnswer] = useState('');
 
   useEffect(() => {
-    setSeconds(30);
+    setSeconds(1);
     setEnabled(false);
     setAnswer('');
     const interval = setInterval(() => {
